@@ -30,6 +30,12 @@ const config: CapacitorConfig = {
     CapacitorHttp: {
       enabled: true,
     },
+    LiveUpdates: {
+      appId: 'bb5929ea',
+      channel: 'Production',
+      autoUpdateMethod: 'background',
+      maxVersions: 2
+    }
   },
   android: {
     allowMixedContent: true
