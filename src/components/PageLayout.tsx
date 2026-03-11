@@ -16,11 +16,11 @@ export default function PageLayout({ Header, children }: any) {
   }, [])
 
   return (
-    <main className="h-screen w-full flex flex-col bg-[var(--theme-primary)]">
+    <main className="h-screen w-full flex flex-col bg-(--theme-primary)">
       <header className="h-[8vh] relative flex flex-col items-center justify-center overflow-hidden">
-        <div className="z-2 absolute top-20 -left-24 w-72 h-36 rotate-44 rounded-full bg-[var(--theme-secondary)]/10"></div>
-        <div className="z-2 absolute bottom-20 -right-24 w-72 h-36 rotate-44 rounded-full bg-[var(--theme-secondary)]/10"></div>
-        <main className="z-4 w-full h-full p-2 flex items-center text-[var(--theme-accent)] shadow-lg">
+        <div className="z-2 absolute top-20 -left-24 w-72 h-36 rotate-44 rounded-full bg-(--theme-secondary)/10"></div>
+        <div className="z-2 absolute bottom-20 -right-24 w-72 h-36 rotate-44 rounded-full bg-(--theme-secondary)/10"></div>
+        <main className="z-4 w-full h-full p-2 flex items-center text-(--theme-accent) shadow-lg">
             {Header}
         </main>
       </header>

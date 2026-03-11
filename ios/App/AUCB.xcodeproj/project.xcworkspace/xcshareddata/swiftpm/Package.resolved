@@ -11,12 +11,12 @@
       }
     },
     {
-      "identity" : "ion-ios-filetransfer",
+      "identity" : "ionic-live-updates-releases",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/ionic-team/ion-ios-filetransfer.git",
+      "location" : "https://github.com/ionic-team/ionic-live-updates-releases.git",
       "state" : {
-        "revision" : "f8b588a319628e7be5c7a4cc90a5edc5b8c4813a",
-        "version" : "1.0.3"
+        "revision" : "abfe9cc9d15acfffb7ca8a1b443eb1e41efef1fd",
+        "version" : "0.5.7"
       }
     }
   ],

@@ -3,7 +3,7 @@ import { motion } from 'motion/react'
 
 export default function PeriodCard( { data }: any) {
 
-  const [event, period ] = data?.event;
+  const [event, period ] = data?.event ?? null;
   return (
     <div className="py-6 flex flex-col space-y-4 border-y-2 border-dashed border-(--theme-secondary)/50">
         <h2 className="text-lg font-medium">Current academic event</h2>

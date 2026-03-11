@@ -1,7 +1,7 @@
 import { fetchNewsTrends } from "@/lib/queries";
 import { Preferences } from "@capacitor/preferences";
 import { ArrowBigRightDashIcon } from "lucide-react";
-import { useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 
 export default function NewsCard() {
 
@@ -30,6 +30,7 @@ export default function NewsCard() {
           content: r.content?.rendered || '',
           link: r.link
         })) || [];
+        
         setNews(newsData);
         await Preferences.set({ key: 'news', value: JSON.stringify(newsData) });
       }
@@ -37,12 +38,15 @@ export default function NewsCard() {
     
     useLayoutEffect(() => {
       cacheNews();
+    }, []); 
+
+    useEffect(() => {
       loadNews();
     }, []); 
 
    
     // Auto-scroll effect for news section
-    useLayoutEffect(() => {
+    useEffect(() => {
       if (!news || news?.length <= 1) return;
       const interval = setInterval(() => {
         setCurrentNewsIndex((prevIndex: number) => {
@@ -71,7 +75,7 @@ export default function NewsCard() {
                     {/* <div className="h-40 w-full bg-gray-200 rounded-xl"></div> */}
                     <img src={row?.image} className="h-36 w-full bg-gray-200 rounded-xl object-cover object-top" />
                     <h2 className="text-base sm:text-lg font-medium tracking-wide capitalize line-clamp-2 leading-5" dangerouslySetInnerHTML={{ __html : row?.title?.toLowerCase() }}></h2>
-                    <a href={row?.link} target="_blank" className="py-0.5 px-3 w-fit flex items-center space-x-2 align-left text-base text-[var(--theme-primary)] rounded-full border border-[var(--theme-primary)]"> 
+                    <a href={row?.link} target="_blank" className="py-0.5 px-3 w-fit flex items-center space-x-2 align-left text-base text-(--theme-primary) rounded-full border border-(--theme-primary)"> 
                         <span className="font-medium">Read more</span>
                         <ArrowBigRightDashIcon size={24}/>
                     </a>
@@ -87,7 +91,7 @@ export default function NewsCard() {
                     <div className="py-3 px-2 w-full space-y-4 flex flex-col justify-between ">
                         <div className="h-40 w-full bg-gray-200 rounded-xl animate-pulse"></div>
                         <h2 className="text-base sm:text-lg font-medium tracking-wide blur-xs animate-pulse">Loading Article Content, Please wait ...</h2>
-                        <div className="py-0.5 px-3 w-fit align-left rounded border border-[var(--theme-primary)] blur-xs animate-pulse"> Read more</div>
+                        <div className="py-0.5 px-3 w-fit align-left rounded border border-(--theme-primary) blur-xs animate-pulse"> Read more</div>
                     </div>
                     {/* Decorators */}
                     <div className="absolute -bottom-14 -right-4 h-20 w-14 rotate-25 rounded-4xl bg-red-200/30"></div>

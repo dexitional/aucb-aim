@@ -8,7 +8,7 @@ import StatusCard from '@/components/profile/StatusCard';
 import { Preferences } from '@capacitor/preferences';
 import pendingHome from '@/components/home/pendingHome';
 import { lazy, Suspense } from 'react';
-import { fetchAcademicStatus, fetchNewsTrends } from '@/lib/queries';
+import { fetchAcademicStatus } from '@/lib/queries';
 import { LogOut } from 'lucide-react';
 import PeriodCard from '@/components/home/PeriodCard';
 
@@ -48,7 +48,7 @@ function RouteComponent() {
             <StatusCard data={academ} />
             { academ?.student?.completeStatus == 0 ? <HomeTimeCard /> : null }
             <MenuCard data={academ} />
-            <PeriodCard data={academ} />
+            {academ?.event ? <PeriodCard data={academ} /> : null }
             
             <Suspense fallback={(<div>loading ...</div>)}>
                <NewsCard />

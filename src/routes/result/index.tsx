@@ -87,10 +87,10 @@ function RouteComponent() {
     <PageLayout Header={<PageHeader title="Results" menuLink="/home" />}>
       {/* <h2 className="mx-4 mt-4 text-xl text-center text-red-950 font-semibold">Academic Result Statement</h2> */}
       <div className="flex flex-col items-center space-y-1">
-        <h2 className="mx-4 mt-4 text-lg sm:text-xl text-center text-[var(--theme-primary)] font-semibold">
+        <h2 className="mx-4 mt-4 text-lg sm:text-xl text-center text-(--theme-primary) font-semibold">
           Academic Result Statement
         </h2>
-        <p className="px-4 font-extrabold text-base sm:text-lg rounded border-2 border-[var(--theme-primary)]/50 text-[var(--theme-primary)]/50">
+        <p className="px-4 font-extrabold text-base sm:text-lg rounded border-2 border-(--theme-primary)/50 text-(--theme-primary)/50">
           CGPA: {loadCgpa()[loadCgpa().length - 1]}
         </p>
       </div>

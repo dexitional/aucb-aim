@@ -33,15 +33,15 @@ export const login = async ({ username, password }: any) => {
         
     } catch (error) {
         console.log(error);
-        await Toast.show({ text: String(error) });
+        // await Toast.show({ text: String(error) });
     }
 }
 
 // ### Home Queries
 export const fetchAcademicStatus = async (session: any) => {
    try {
-    // const resp:any = await fetch(`${API_URL}/api/ais/students/${encodeURIComponent(session?.user?.tag)}`, {
-    const resp:any = await fetch(`${API_URL}/api/ais/academic-status/${encodeURIComponent('41329275')}`, {
+    const resp:any = await fetch(`${API_URL}/api/ais/students/${encodeURIComponent(session?.user?.tag)}`, {
+    // const resp:any = await fetch(`${API_URL}/api/ais/academic-status/${encodeURIComponent('41329275')}`, {
         method: 'GET',
         headers: {
         "Content-Type": "application/json", 
@@ -89,7 +89,8 @@ export const fetchNewsTrends = async () => {
 // ### Profile Queries
 export const fetchProfile = async (session: any) => {
     try {
-        const resp = await fetch(`${API_URL}/api/ais/students/${encodeURIComponent('41329275')}`, {
+        const resp = await fetch(`${API_URL}/api/ais/students/${encodeURIComponent(session?.user?.tag)}`, {
+        // const resp = await fetch(`${API_URL}/api/ais/students/${encodeURIComponent('41329275')}`, {
             method: 'GET',
             headers: {
               "Content-Type": "application/json", 
@@ -111,8 +112,8 @@ export const fetchProfile = async (session: any) => {
 export const saveProfile = async (data: any, session: any) => {
     try {
         
-        // const resp:any = await fetch(`${API_URL}/api/ais/students/${encodeURIComponent(session?.user?.tag)}`, {
-        const resp:any = await fetch(`${API_URL}/api/ais/students/${encodeURIComponent('41329275')}`, {
+        const resp:any = await fetch(`${API_URL}/api/ais/students/${encodeURIComponent(session?.user?.tag)}`, {
+        // const resp:any = await fetch(`${API_URL}/api/ais/students/${encodeURIComponent('41329275')}`, {
             method: 'PATCH',
             headers: {
             "Content-Type": "application/json", 
@@ -133,15 +134,15 @@ export const saveProfile = async (data: any, session: any) => {
 
     } catch (error) {
         console.log(error);
-        await Toast.show({ text: String(error) });
+        // await Toast.show({ text: String(error) });
     }
 }
 
 // ### Result Queries
 export const fetchResults = async (session: any) => {
     try {
-        // const resp = await fetch(`${API_URL}/api/ais/students/${encodeURIComponent(session?.user?.tag)}/transcript`, {
-        const resp = await fetch(`${API_URL}/api/ais/students/${encodeURIComponent('41329275')}/transcript`, {
+        const resp = await fetch(`${API_URL}/api/ais/students/${encodeURIComponent(session?.user?.tag)}/transcript`, {
+        // const resp = await fetch(`${API_URL}/api/ais/students/${encodeURIComponent('41329275')}/transcript`, {
             method: 'GET',
             headers: {
                 "Content-Type": "application/json", 
@@ -165,8 +166,8 @@ export const fetchResults = async (session: any) => {
 // ### Fees & Transactions Queries
 export const fetchFees = async (session: any) => {
     try {
-        // const resp = await fetch(`${API_URL}/api/ais/students/${encodeURIComponent(session?.user?.tag)}/finance`, {
-        const resp = await fetch(`${API_URL}/api/ais/students/${encodeURIComponent('41329275')}/finance`, {
+        const resp = await fetch(`${API_URL}/api/ais/students/${encodeURIComponent(session?.user?.tag)}/finance`, {
+        // const resp = await fetch(`${API_URL}/api/ais/students/${encodeURIComponent('41329275')}/finance`, {
             method: 'GET',
             headers: {
             "Content-Type": "application/json", 
@@ -188,8 +189,8 @@ export const fetchFees = async (session: any) => {
 // ### Registration Queries
 export const fetchCourses = async (session: any) => {
     try {
-        // const resp = await fetch(`${API_URL}/api/ais/registrations/mount/${encodeURIComponent(session?.user?.tag)}`, {
-        const resp = await fetch(`${API_URL}/api/ais/registrations/mount/${encodeURIComponent('41329275')}`, {
+        const resp = await fetch(`${API_URL}/api/ais/registrations/mount/${encodeURIComponent(session?.user?.tag)}`, {
+        // const resp = await fetch(`${API_URL}/api/ais/registrations/mount/${encodeURIComponent('41329275')}`, {
             method: 'GET',
             headers: {
               "Content-Type": "application/json", 
@@ -234,8 +235,8 @@ export const saveCourses = async (data: any, session: any) => {
 
 export const fetchSlip = async (session: any) => {
     try {
-        // const resp = await fetch(`${API_URL}/api/ais/registrations/${encodeURIComponent(session?.user?.tag)}`, {
-        const resp = await fetch(`${API_URL}/api/ais/registrations/${encodeURIComponent('41329275')}`, {
+        const resp = await fetch(`${API_URL}/api/ais/registrations/${encodeURIComponent(session?.user?.tag)}`, {
+        // const resp = await fetch(`${API_URL}/api/ais/registrations/${encodeURIComponent('41329275')}`, {
             method: 'GET',
             headers: {
             "Content-Type": "application/json", 
@@ -269,8 +270,7 @@ export const downloadSlip = async () => {
 
 export const fetchMajors = async (session: any) => {
     try {
-        // const resp = await fetch(`${API_URL}/api/ais/majors/list`, {
-        const resp = await fetch(`${API_URL}/api/ais/majors/list`, {
+       const resp = await fetch(`${API_URL}/api/ais/majors/list`, {
             method: 'GET',
             headers: {
                 "Content-Type": "application/json", 

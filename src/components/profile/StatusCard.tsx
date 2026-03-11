@@ -30,9 +30,9 @@ export default function StatusCard({ data }: any) {
                 <span className="text-lg font-bold">YEAR</span>
                 <span className="text-2xl sm:text-3xl font-extrabold italic">{ Math.ceil(data?.student?.semesterNum / 2) }</span>
             </div>
-            <div className="z-4 py-4 w-full space-y-1 flex flex-col items-start justify-start text-r[var(--theme-secondary)]">
+            <div className="z-4 py-4 w-full space-y-1 flex flex-col items-start justify-start text-(--theme-primary)/60">
                 <span className="font-bold text-lg sm:text-xl text-left">ACTIVE</span>
-                <Link to="/result" className="px-2 py-0.5 rounded-md border-2 border-(--theme-primary)/50 text-xs sm:text-sm text-(--theme-primary)/70 bg-white font-semibold">{data?.session?.year} {data?.session?.semester == 'SEM1' ? 'FIRST SEMESTER': 'SECOND SEMESTER'}</Link>
+                <Link to="/result" className="px-2 py-0.5 rounded-md shadow border border-(--theme-primary)/10 text-xs sm:text-sm text-(--theme-primary)/70 bg-white font-semibold">{data?.session?.year} {data?.session?.semester == 'SEM1' ? 'FIRST SEMESTER': 'SECOND SEMESTER'}</Link>
             </div>
             <div className="z-2 px-3 py-0.5 absolute top-0 -right-2 rounded-md font-bold italic text-xs sm:text-sm text-gray-500 bg-(--theme-secondary)/30">{ data?.isRegistered ? 'Not Registered' : 'Registered'} </div>
             </>) : null }

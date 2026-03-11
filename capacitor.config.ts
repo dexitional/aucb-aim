@@ -7,7 +7,7 @@ const config: CapacitorConfig = {
   webDir: 'dist/client',
   plugins: {
     Keyboard: {
-      resize: KeyboardResize.None,
+      resize: KeyboardResize.Native,
       style: KeyboardStyle.Dark,
       resizeOnFullScreen: true,
     },
@@ -29,12 +29,6 @@ const config: CapacitorConfig = {
     },
     CapacitorHttp: {
       enabled: true,
-    },
-    LiveUpdates: {
-      appId: 'bb5929ea',
-      channel: 'Production',
-      autoUpdateMethod: 'background',
-      maxVersions: 2
     }
   },
   android: {
